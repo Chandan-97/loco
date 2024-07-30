@@ -51,3 +51,11 @@ class CreateGetTransactionView(APIView):
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
         return Response({"status": "ok"}, status=status.HTTP_201_CREATED)
+
+
+class GetTransactionListView(APIView):
+    def get(self, request, *args, **kwargs):
+        txn_type = kwargs.get("txn_type")
+        transactions = Transaction.objects.filter(type=txn_type).values_list("amount", flat=True)
+
+        return Response(transactions, status=status.HTTP_200_OK)
