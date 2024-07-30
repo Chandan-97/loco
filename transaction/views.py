@@ -6,7 +6,25 @@ from django.core.exceptions import ObjectDoesNotExist
 from .models import Transaction
 
 
-class CreateTransactionView(APIView):
+class CreateGetTransactionView(APIView):
+
+    def get(self, request, *args, **kwargs):
+        txn_id = kwargs.get("txn_id")
+        try:
+            txn = Transaction.objects.get(txn_id=txn_id)
+        except ObjectDoesNotExist as e:
+            return Response({"error": "Transaction Does not exist"}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        resp = {
+            "amount": txn.amount,
+            "type": txn.type,
+        }
+        if txn.parent:
+            resp["parent_id"] = txn.parent.txn_id
+
+        return Response(resp, status=status.HTTP_200_OK)
+
     def put(self, request, *args, **kwargs):
         txn_id = kwargs.get("txn_id")
         data = request.data
