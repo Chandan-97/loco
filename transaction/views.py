@@ -59,3 +59,17 @@ class GetTransactionListView(APIView):
         transactions = Transaction.objects.filter(type=txn_type).values_list("amount", flat=True)
 
         return Response(transactions, status=status.HTTP_200_OK)
+
+
+class GetTransactionSumView(APIView):
+    def get(self, request, *args, **kwargs):
+        txn_id = kwargs.get("txn_id")
+        try:
+            txn = Transaction.objects.get(txn_id=txn_id)
+        except ObjectDoesNotExist as e:
+            return Response({"error": "Transaction Does not exist"}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+        sum = txn.SumChild()
+        return Response({"sum": sum}, status=status.HTTP_200_OK)
