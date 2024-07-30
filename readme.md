@@ -10,16 +10,16 @@
 ## Related Images
 
 Postman Collection
-* ![Postman Collection](/Users/chandanp/Desktop/Screenshot 2024-07-30 at 12.52.50 PM.png)
+* ![Postman Collection](/Users/chandanp/PycharmProjects/loco/resource/postman_images/Screenshot 2024-07-30 at 12.52.50 PM.png)
 
 Create Transaction
-* ![Create Transaction](/Users/chandanp/Desktop/Screenshot 2024-07-30 at 12.52.58 PM.png)
+* ![Create Transaction](/Users/chandanp/PycharmProjects/loco/resource/postman_images/Screenshot 2024-07-30 at 12.52.58 PM.png)
 
 Get Transaction
-* ![Get Transaction](/Users/chandanp/Desktop/Screenshot 2024-07-30 at 12.53.05 PM.png)
+* ![Get Transaction](/Users/chandanp/PycharmProjects/loco/resource/postman_images/Screenshot 2024-07-30 at 12.53.05 PM.png)
 
 Get Transaction Amount List
-* ![Get Transaction Amount List](/Users/chandanp/Desktop/Screenshot 2024-07-30 at 12.53.18 PM.png)
+* ![Get Transaction Amount List](/Users/chandanp/PycharmProjects/loco/resource/postman_images/Screenshot 2024-07-30 at 12.53.18 PM.png)
 
 Get Transaction Amount SUM
-* ![Get Transaction Amount SUM](/Users/chandanp/Desktop/Screenshot 2024-07-30 at 12.53.25 PM.png)
+* ![Get Transaction Amount SUM](/Users/chandanp/PycharmProjects/loco/resource/postman_images/Screenshot 2024-07-30 at 12.53.25 PM.png)
